@@ -1,0 +1,10 @@
+.cart{
+  display: block;
+  background-color:rgba(229, 54, 55, 1);
+  border-radius: 4px;
+  text-align: center;
+  text-decoration:none;
+  padding:0.5em;
+  width:10%;
+  color:white;
+}

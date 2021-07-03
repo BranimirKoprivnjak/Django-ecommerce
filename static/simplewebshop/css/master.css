@@ -1,0 +1,410 @@
+
+/* Header */
+
+body{
+  margin:0;
+  font-family: 'Montserrat', sans-serif;
+}
+header{
+  width:60%;
+  margin: auto;
+}
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size:1.2em;
+  padding:2em 0 2em 0;
+}
+ul.navbar li{
+  display: inline;
+  padding-right:4em;
+}
+ul.navbar li a {
+  text-align: center;
+  text-decoration: none;
+  color:black;
+}
+ul.navbar li a:hover {
+  border-bottom: 2px solid rgba(229, 54, 55, 1);
+}
+.active{
+  border-bottom: 2px solid rgba(229, 54, 55, 1);
+}
+
+/* Breadcrumbs */
+
+.wrapper{
+  background-color:rgba(243, 242, 238, 1)
+}
+.container{
+  width:60%;
+  margin:auto;
+  padding: 1.5em 0 1.5em 0;
+}
+.container h2{
+    margin:0;
+}
+ul.breadcrumb{
+  list-style: none;
+  padding: 0;
+}
+ul.breadcrumb li {
+  display: inline;
+}
+ul.breadcrumb li+li:before {
+  padding: 0.5em;
+  color: black;
+  content: "\003E";
+}
+ul.breadcrumb li a{
+  text-decoration: none;
+  color:rgba(150, 150, 150, 1);
+}
+ul.breadcrumb li a:hover{
+  color:black;
+  transition: 0.2s;
+}
+
+/* messages */
+.message{
+  width:60%;
+  margin:auto;
+}
+.message p{
+  font-size:0.8em;
+  color:rgba(229, 54, 55, 1);
+}
+
+/* grid layout */
+
+.grid-container{
+  width:60%;
+  margin:auto;
+  display:grid;
+  grid-template-columns:20% 80%;
+  grid-template-rows: auto;
+  padding-top:2em;
+}
+.grid-small-container{
+  display:grid;
+  grid-template-columns:33% 33% 33%;
+  grid-template-rows: auto;
+  padding-left:2em;
+}
+
+/* sign up */
+
+.container-user{
+  background-color:rgba(243, 242, 238, 1);
+  padding:2em;
+  width:33%;
+  margin:auto;
+  margin-top:2em;
+  /*
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  */
+}
+.container-user h1{
+  text-align: center;
+}
+.container-user input[type=text], input[type=email], input[type=password], button, select {
+  font-family: 'Montserrat', sans-serif;
+  padding:0.9em 0 0.9em 0;
+  margin:0.4em 0 0.4em 0;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;/* remove underline from anchors */
+}
+.container-user input[type=text], input[type=email], input[type=password], select{
+  width:98%;
+  font-size:1.1em;
+  padding-left:0.7em;
+}
+.container-user button{
+  width:33%;
+  background-color:rgba(200, 54, 55, 1);
+  color:white;
+  cursor:pointer;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.5em;
+}
+.container-user button:hover{
+  background-color:rgba(229, 54, 55, 1);
+}
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+.col a{
+  margin-left:0.2em;
+  padding:0.2em;
+  text-decoration:none;
+}
+.col{
+  margin-top:1.2em;
+}
+
+/* login --> inherits most from signup section */
+
+.help a{
+  text-decoration: none;
+  color:black;
+}
+.help a:hover{
+  color:rgba(229, 54, 55, 1);
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+/* accordion */
+
+.accordion {
+  cursor: pointer;
+  padding: 1em 0 1em 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  font-size: 1em;
+  transition: 0.4s;
+  border: none;
+  background: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.active2, .accordion:hover {
+  background-color: rgba(240, 240, 240, 1)
+}
+.accordion:after {
+  content: '\02C5';
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+.active2:after {
+  content: "\02C4";
+}
+.panel {
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.panel a{
+  text-decoration: none;
+  color:rgba(150, 150, 150, 1);
+  transition: 0.2s;
+}
+.panel a:hover{
+  color:black;
+  font-weight:bold;
+}
+.panel ul{
+  padding: 0;
+  list-style: none;
+}
+.panel ul li{
+  display: block;
+  padding-bottom: 0.3em;
+}
+.panel hr{
+  border: 1px solid rgba(240, 240, 240, 1)
+}
+
+/* item */
+
+.pic{
+  width:100%;
+  cursor: pointer;
+}
+.price{
+  font-size:1.1em;
+  clear: both;
+}
+.item{
+  padding-left:1.2em;
+  text-decoration: none;
+  color:black;
+}
+.item:hover .cart{
+  display: block;
+  color:red;
+}
+.name{
+  font-size:0.9em;
+}
+.sale{
+  position: absolute;
+  top: 0.4em;
+  background: black;
+  color:white;
+  font-size:0.8em;
+  padding:0.23em 0.75em 0.23em 0.75em;
+}
+.image{
+  position: relative;
+}
+.cart{
+  display:none;
+  cursor: pointer;
+  padding-bottom:1em;
+}
+.cart:hover{
+  text-decoration:underline;
+}
+/*detail view item*/
+.container-item{
+  padding-top:2em;
+  width:60%;
+  margin:auto;
+}
+
+/* order summary */
+
+.order-description hr{
+  border: 1px solid rgba(240, 240, 240, 1)
+}
+.custom-fa-minus{
+  padding:0.2em;
+  background-color:red;
+  text-decoration:none;
+  border-radius: 5px;
+  color:white;
+}
+tbody{
+  text-align:center;
+}
+.checkout p{
+  font-size:1.2em;
+}
+.checkout a{
+  display: block;
+  background-color:rgba(229, 54, 55, 1);
+  border-radius: 4px;
+  text-decoration:none;
+  padding:0.5em;
+  color:white;
+}
+.checkout a:hover{
+  text-decoration:underline;
+}
+.checkout{
+  float:right;
+  text-align:center;
+  width:14%;
+}
+
+/* pagination */
+
+.pagination{
+  grid-column-start: 2;
+  margin:auto;
+  margin-top:2em;
+  margin-bottom:3em;
+  padding-left:2em;
+}
+.pagination a{
+  text-decoration: none;
+  color: black;
+  padding:0.4em 0.8em 0.4em 0.8em;
+}
+.pagination a.active{
+  border-radius: 50%;
+  border:1px solid black;
+}
+.pagination a:hover:not(.active):not(.dots){
+  border:1px solid black;
+  border-radius: 50%;
+  height:2em;
+  width:2em;
+}
+
+@media only screen and (max-width: 1300px) {
+  body {
+    font-size:14px;
+  }
+  .container{
+    width:75%;
+  }
+  header{
+    width:75%;
+  }
+  .grid-small-container{
+    grid-template-columns:50% 50%;
+  }
+  .grid-container{
+    width:75%;
+  }
+  .container-user{
+    width:50%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    font-size:12px;
+  }
+  ul.navbar li{
+    display: block;
+    text-align: center;
+    padding-bottom: 0.8em;
+  }
+  .container{
+    width:90%;
+  }
+  header{
+    width:90%;
+  }
+  .grid-small-container{
+    grid-template-columns:100%;
+    padding:0;
+  }
+  .grid-container{
+    grid-template-columns:100%;
+  }
+  .container-user{
+    width:75%;
+  }
+  .pagination{
+    grid-column-start: 1;
+  }
+  .price{
+    font-size:1.4em;
+  }
+  .name{
+    font-size:1.1em;
+  }
+  .item{
+    padding:0;
+  }
+  .container-item{
+    margin:auto;
+    width:90%;
+  }
+  .mobile-width{
+    width:20%;
+  }
+  .container-item img{
+    width:100%;
+  }
+  .description{
+    font-size:1.1em;
+  }
+  .cart{
+    padding:0.8em;
+  }
+}

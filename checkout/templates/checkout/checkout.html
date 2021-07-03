@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li><a href="{% url 'shop:order-summary' %}"><strong>Order Summary</strong></a></li>
+  <li><a href="#"><strong>Checkout</strong></a></li>
+{% endblock %}
+
+{% block content%}
+  <div class="container-user">
+    {% load crispy_forms_tags %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit">Payment</button>
+    </form>
+  </div>
+{% endblock %}

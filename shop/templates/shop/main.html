@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li><a href="{% url 'shop:main' %}"><strong>Shop</strong></a></li>
+{% endblock %}
+
+{% block content %}
+  <div class="grid-container">
+    {% block pregroup %}
+      {% include 'shop/_accordion.html' %}
+    {% endblock %}
+    <div class="grid-small-container">
+      {% block group_content %}
+        {% for item in items %}
+          {% include 'shop/_item.html' %}
+        {% endfor %}
+      {% endblock %}
+    </div>
+    {% block postgroup %}
+      {% include 'shop/_pagination.html' %}
+    {% endblock %}
+  </div>
+{% endblock %}

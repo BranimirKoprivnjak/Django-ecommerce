@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li><a href="{% url 'shop:order-summary' %}"><strong>Order Summary</strong></a></li>
+  <li><a href="{% url 'checkout:checkout' %}"><strong>Checkout</strong></a></li>
+  <li><a href="#"><strong>Payment</strong></a></li>
+{% endblock %}
+
+{% block content %}
+  <div class="container-user">
+    <h1>Total: ${{ total }}</h1>
+    <script src="https://www.paypal.com/sdk/js?client-id=test" enctype="text/json"></script>
+    <div id="paypal-button-container"></div>
+    <script>paypal.Buttons().render('#paypal-button-container');</script>
+  </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+<div class="item">
+  <div class="image">
+    <a href="{% url 'shop:product' slug=item.slug %}"><img src="{{ BASE_DIR }}/{{ item.image }}" alt="" class="pic"></a>
+    {% if item.discount_price %}
+      <p class="sale"><strong>SALE</strong></p>
+    {% endif %}
+  </div>
+    <p class="name"><strong>{{item.title}}</strong></p>
+      {% if item.discount_price %}
+        <p class="price"><strong>${{item.discount_price}}</strong></p>
+      {% else %}
+        <p class="price"><strong>${{item.price}}</strong></p>
+      {% endif %}
+    <a href="{% url 'shop:add-to-cart' slug=item.slug %}" class="cart"><strong>Add to cart</strong></a>
+</div>

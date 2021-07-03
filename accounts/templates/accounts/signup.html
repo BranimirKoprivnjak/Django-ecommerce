@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li><a href="#"><strong>Sign up</strong></a></li>
+{% endblock %}
+
+{% block content %}
+  <div class="container-user">
+    <h1><strong>Sign Up</strong></h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="col">
+      <a href="#" class="fb btn">
+        <span class="fa fa-facebook fa-fw"></span>
+       </a>
+      <a href="#" class="twitter btn">
+        <span class="fa fa-twitter fa-fw"></span>
+      </a>
+      <a href="#" class="google btn">
+        <span class="fa fa-google fa-fw"></span>
+      </a>
+    </div>
+  </div>
+{% endblock %}

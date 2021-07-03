@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'simplewebshop/css/item_detail.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+  <li><a href="{% url 'shop:main' %}"><strong>Shop</strong></a></li>
+  <li><a href="#"><strong>{{ item.title }}</strong></a></li>
+{% endblock %}
+
+{% block content %}
+  <div class="container-item">
+    <img src="{{ BASE_DIR }}/{{ item.image }}" alt="">
+    <p class="name"><strong>{{item.title}}</strong></p>
+    {% if item.discount_price %}
+      <p class="price"><strong>${{ item.discount_price }}</strong></p>
+    {% else %}
+      <p class="price"><strong>${{ item.price }}</strong></p>
+    {% endif %}
+      <a href="{% url 'shop:add-to-cart' slug=item.slug %}" class="cart"><strong>Add to cart</strong></a>
+    <p class="description">{{ item.description }}</p>
+  </div>
+{% endblock %}

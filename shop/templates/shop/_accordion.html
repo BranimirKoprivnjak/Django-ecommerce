@@ -1,0 +1,28 @@
+<div>
+  <button class="accordion"><strong>CATEGORIES</strong></button>
+  <div class="panel">
+    <ul>
+      <li>
+        <form method="post">
+          <a href="{% url 'shop:filtered' category='Jackets' %}">Jackets ({{ Jackets }})</a>
+        </form></li>
+      <li>
+        <form method="post">
+          <a href="{% url 'shop:filtered' category='Hoodies' %}">Hoodies ({{ Hoodies }})</a>
+        </form></li>
+      <li>
+        <form method="post">
+          <a href="{% url 'shop:filtered' category='Tshirts' %}">Tshirts ({{ Tshirts }})</a>
+        </form></li>
+      <li>
+        <form method="post">
+          <a href="{% url 'shop:filtered' category='Scarfs' %}">Scarfs ({{ Scarfs }})</a>
+        </form></li>
+      <li>
+        <form method="post">
+          <a href="{% url 'shop:filtered' category='Bags' %}">Bags ({{ Bags }})</a>
+        </form></li>
+      <hr>
+    </ul>
+  </div>
+</div>

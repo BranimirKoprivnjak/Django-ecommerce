@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'simplewebshop/css/master.css' %}">
+    {% block css %}{% endblock %}
+    <title></title>
+  </head>
+  <body>
+    <header>
+        <ul class="navbar">
+          <li><a href="#"><strong>Brand</strong></a></li>
+          <li><a href="#"><strong>Home</strong></a></li>
+          <li><a href="{% url 'shop:main' %}"><strong>Shop</strong></a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'accounts:logout' %}"><strong>Log out</strong></a></li>
+          <li><a href="{% url 'shop:order-summary' %}"><span class="fa fa-shopping-basket" aria-hidden="true"></span></a></li>
+          {% else %}
+          <li><a href="{% url 'accounts:login' %}"><strong>Log in</strong></a></li>
+          {% endif %}
+        </ul>
+    </header>
+    <div class="wrapper">
+      <div class="container">
+        <h2><strong>Brand Shop</strong></h2>
+        <ul class="breadcrumb">
+          {% block breadcrumb %}{% endblock %}
+        </ul>
+      </div>
+    </div>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="message">
+          <p><strong>{{ message }}</strong></p>
+        </div>
+      {% endfor %}
+    {% endif %}
+      {% block content %}
+      {% endblock %}
+  </body>
+  <script src="{% static 'simplewebshop/js/master.js' %}"></script>
+</html>
